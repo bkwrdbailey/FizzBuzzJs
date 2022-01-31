@@ -48,6 +48,19 @@ pre[class*="language-"] {
     color:  var(--secondary-color);
 }
 
+.Fizz {
+    color:gold;
+}
+
+.Buzz {
+    color:lawngreen;
+}
+
+.FizzBuzz {
+    color:crimson;
+    font-weight: bold;
+}
+
 footer {
     background-color: var(--dark-color);
 }

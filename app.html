@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Bailey Barton</title>
+    <title>FIZZBUZZ: A Coding Project By Bailey Barton</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
     <!-- === Nav Section ===-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img class="d-inline-block align-text-top" src="img/BaileyBarton_WhtLogo.svg" width="36" height="30"> FIZZBUZZ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                     <a class="nav-link" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="new_blank" href="#">Git Repo</a> <!--Link To Github-->
+                    <a class="nav-link" target="new_blank" href="https://github.com/bkwrdbailey/FizzBuzzJs">Git Repo</a> <!--Link To Github-->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="new_blank" href="#">About</a> <!--Link to Portfolio page-->
@@ -51,34 +51,38 @@
     <main class="flex-shrink-0">
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
-                <div class="col order-last order-lg-first">
-                     <h1 class="display-5 fw-bold mb-3 lh-1">APP NAME: A Coding Project</h1>
-                     <h4 class="lead">Project Description Here</h4>
-                     <ul class="fa-ul pt-2 checklist">
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>CSS and Bootstrap Layout</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Fundamentals</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Loops</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Functions</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript DOM Manipulation</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript If/Then/Else</li>
-                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Javascript Boolean Logic</li>
-                     </ul>
-                     <div>
-                         <button type="button" class="btn btn-outline-dark btn-lg px-4 me-md-2" href="app.html">Try It Out!</button>
-                     </div>
-                     <h5 class="fw-bold mt-5">
-                         <div class="d-flex">
-                             <div class="row">
-                                 <div class="col"><i class="fab fa-js-square fa-5x jsicon"></i></div>
-                                 <div class="col"><i class="fab fa-bootstrap fa-5x bsicon"></i></div>
-                                 <div class="col"><i class="fab fa-html5 fa-5x html5icon"></i></div>
-                                 <div class="col"><i class="fab fa-css3-alt fa-5x cssicon"></i></div>
-                             </div>
-                         </div>
-                     </h5>
+                <div class="col col-lg-4 border-end border-2">
+                    <h1>FIZZ BUZZ: A Coding Project</h1>
+                    <h4 class="lead">
+                        This program takes in a <span style = "font-weight: bold">FIZZ</span> value and a <span style = "font-weight: bold">BUZZ</span> value to be used when evaluting the numbers between 1 and 100
+                        to see if they are divisible by the first value given or the second one. The resulting table display will show <span style = "font-weight: bold">FIZZ</span> if a number is divisible by the first value,
+                        <span style = "font-weight: bold">BUZZ</span> if a number is divisible by the second value, <span style = "font-weight: bold">FIZZBUZZ</span> if a number is divisible by both values, or just the number
+                        itself if it is not divisible by either.
+                    </h4>
+                    <h2>Instructions</h2>
+                    <p>Enter a <span style = "font-weight: bold">FIZZ</span> value and a <span style = "font-weight: bold">BUZZ</span> value that will be used in the <span style = "font-weight: bold">FIZZBUZZ</span> process
                 </div>
-                <div class="col">
-                    <!-- <img src="#" class='img-fluid center-block d-block mx-auto' alt="App Logo Desc" width="700" height="500"> -->
+                <div class="col col-lg-8">
+                    <h5>Enter Values</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value" value=3 aria-label="Fizz Value">
+                        </div>
+                        <div class="col">
+                            <input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value" value=5 aria-label="Buzz Value">
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display The FizzBuzz</button>
+                        </div>
+                    </form>
+                    <h2 class="mt-5 border-bottom border-2">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <tbody id="results">
+                                <!--FizzBuzz Results Appear Here-->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,12 +109,24 @@
             </div>
         </div>
     </footer>
+
+    <template id="fbTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="js/site.js">
-
+    <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", fizzBuzzValues);
     </script>
 </body>
 
